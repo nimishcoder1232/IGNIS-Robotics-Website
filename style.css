@@ -1,0 +1,476 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  /* very dark blue background to preserve the dark site look */
+  background: #020617;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+.site-header {
+  background: #0f68ea;
+  padding: 1.25rem 2rem; /* increased header padding for more space */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* slightly larger gap between logo and name */
+}
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.75rem;
+  background: #0f68ea;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 3px rgba(15, 104, 234, 0.4);
+}
+
+.site-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+nav a {
+  color: #e5e7eb;
+  margin-left: 1.25rem; /* more spacing between nav items */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sponsor-packet-link {
+  color: #7c3aed; /* purple that's easier to read on dark backgrounds */
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.sponsor-packet-link:hover,
+.sponsor-packet-link:focus {
+  color: #9f7aea;
+  text-decoration: none;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+}
+
+.social-btn.youtube {
+  background: #FF0000; /* YouTube red */
+}
+
+.social-btn.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); /* Instagram gradient */
+}
+
+.social-btn:focus-visible {
+  outline: 3px solid rgba(255,255,255,0.18);
+  outline-offset: 3px;
+}
+
+nav a:hover {
+  color: #fffbeb;
+}
+
+main {
+  padding: 1.5rem;
+  margin: 0;
+  min-height: 100vh; /* Ensure it fills the full viewport height */
+}
+
+.hero {
+  background: #0f68ea;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 10.5rem; /* increased gap below hero (3x) */
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.9);
+  min-height: 560px; /* give the hero a solid presence so the image displays prominently */
+}
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  height: 100%;
+}
+
+/* generic hero image style (used on home) */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  background: #0f68ea;
+  border-radius: 0.9rem;
+  overflow: hidden; /* ensure the image can crop to shape */
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+.hero-image span {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* crop nicely to fill the area */
+  object-position: center;
+  border-radius: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 360px;
+  }
+  .hero-photo {
+    object-position: top center; /* show useful detail on narrow screens */
+    border-radius: 0.6rem;
+  }
+}
+
+
+/* hero badges removed; the team photo now fills the left column */
+
+.hero-content h2 {
+  font-size: 2.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: #bfdbfe;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  margin-bottom: 0.75rem;
+  color: #e5e7eb;
+  font-size: 1.05rem;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: #0f68ea;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 15px 35px rgba(15, 104, 234, 0.35);
+  border: 2px solid rgba(255,255,255,0.14); /* subtle outline so button reads on dark backgrounds */
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(15, 104, 234, 0.42);
+}
+
+.primary-button:focus-visible {
+  outline: 3px solid rgba(15, 104, 234, 0.25);
+  outline-offset: 4px;
+}
+
+.primary-button:hover {
+  filter: brightness(1.05);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  background: #0f68ea;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(15, 104, 234, 0.25);
+  border: 2px solid rgba(255,255,255,0.14);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(15, 104, 234, 0.32);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid rgba(15, 104, 234, 0.25);
+  outline-offset: 4px;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 3.75rem; /* extra spacing from hero (3x) */
+}
+
+.highlight-card {
+  background: #0f68ea;
+  border-radius: 0.9rem;
+  padding: 1.25rem 1.3rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.highlight-card h3 {
+  margin-bottom: 0.4rem;
+  color: #e5e7eb;
+}
+
+.highlight-card p {
+  color: #cbd5f5;
+}
+
+section h3, main h2 {
+  margin: 1.5rem 0 0.75rem;
+}
+
+.sponsor-list li,
+.social-list li {
+  margin-bottom: 0.4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 480px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 0.35rem;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #f9fafb;
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: #4b5563;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.site-footer {
+  border-top: 1px solid #1f2933;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4; /* Maintain 1080x1440 aspect ratio */
+  max-height: 720px; /* Ensure it doesn't exceed a reasonable height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  color: #e5e7eb;
+  padding: 1rem;
+  background: #0f68ea;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 1.5rem; /* Add padding to create space at the top */
+  min-height: 720px; /* Match the max-height of the images */
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-top: 0; /* Ensure the title starts at the very top */
+  margin-bottom: 0.5rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+.sponsor-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sponsor-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  max-height: 720px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sponsor-text {
+  color: #e5e7eb;
+  padding: 1rem;
+  background: #0f68ea;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align title and content to the top */
+  height: 100%;
+  min-height: 720px; /* Match the max-height of the image */
+  padding-top: 1.25rem; /* small breathing room at top */
+}
+
+.sponsor-text h2 {
+  margin-top: 0; /* title at the very top */
+  /* responsive heading size */
+  font-size: clamp(1.2rem, 1.6vw + 0.6rem, 2rem);
+}
+
+.sponsor-text p,
+.sponsor-text ul {
+  /* responsive body size: shrinks on smaller viewports so larger blocks fit better */
+  font-size: clamp(0.95rem, 0.9vw + 0.45rem, 1.05rem);
+  line-height: 1.6;
+}
+
+.sponsor-text ul li {
+  margin: 0.5rem 0;
+}
+
+.contact-email {
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  font-weight: 700;
+  color: #facc15;
+  word-break: break-word;
+  margin: 0.6rem 0 0.25rem;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact-image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* push the image to the right side of its column */
+  padding-right: 1.5rem; /* small breathing room from the column edge */
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  border-radius: 1rem;
+  display: block;
+}
+
+.contact-info h2 {
+  margin-top: 0;
+  font-size: 2.2rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+  .contact-image img {
+    max-width: 100%;
+  }
+  /* reduce large desktop-only spacing on small screens */
+  .hero {
+    margin-bottom: 2rem;
+  }
+  .highlight-grid {
+    margin-top: 1rem;
+  }
+}
