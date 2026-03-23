@@ -418,8 +418,16 @@ section h3, main h2 {
   line-height: 1.6;
 }
 
+/* Make list markers align with the paragraph text inside the padded .sponsor-text box */
+.sponsor-text ul {
+  margin: 0.5rem 0 0;
+  padding-left: 0; /* remove browser default indent */
+  list-style-position: inside; /* put bullets inside the content flow so they line up */
+}
+
 .sponsor-text ul li {
   margin: 0.5rem 0;
+  padding-left: 0.25rem; /* small spacing so wrapped lines don't touch the marker */
 }
 
 .contact-email {
