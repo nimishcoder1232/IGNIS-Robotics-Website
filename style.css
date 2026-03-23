@@ -328,7 +328,7 @@ section h3, main h2 {
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start; /* keep content top-aligned so text doesn't stretch */
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -338,6 +338,7 @@ section h3, main h2 {
   height: auto;
   aspect-ratio: 3 / 4; /* Maintain 1080x1440 aspect ratio */
   max-height: 720px; /* Ensure it doesn't exceed a reasonable height */
+  min-height: 360px; /* ensure images remain visible and don't collapse */
   background-size: cover;
   background-position: center;
   border-radius: 0.75rem;
@@ -350,12 +351,12 @@ section h3, main h2 {
   background: #0f68ea;
   border-radius: 0.75rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align content to the top */
   padding-top: 1.5rem; /* Add padding to create space at the top */
-  min-height: 720px; /* Match the max-height of the images */
+  min-height: auto; /* allow natural flow */
 }
 
 .about-text h2 {
@@ -373,7 +374,7 @@ section h3, main h2 {
 .sponsor-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start;
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -383,6 +384,7 @@ section h3, main h2 {
   height: auto;
   aspect-ratio: 3 / 4;
   max-height: 720px;
+  min-height: 360px;
   background-size: cover;
   background-position: center;
   border-radius: 0.75rem;
@@ -398,8 +400,8 @@ section h3, main h2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* align title and content to the top */
-  height: 100%;
-  min-height: 720px; /* Match the max-height of the image */
+  height: auto;
+  min-height: auto;
   padding-top: 1.25rem; /* small breathing room at top */
 }
 
@@ -472,5 +474,38 @@ section h3, main h2 {
   }
   .highlight-grid {
     margin-top: 1rem;
+  }
+}
+
+/* Stack image above text for about and sponsor sections on narrower screens */
+@media (max-width: 900px) {
+  .about-section,
+  .sponsor-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* let the images take a sensible height so they don't collapse */
+  .about-image,
+  .sponsor-image {
+    width: 100%;
+    aspect-ratio: 3 / 2; /* wider on mobile for better presence */
+    max-height: none;
+    min-height: 260px;
+    background-size: cover; /* ensure background images cover the area */
+    background-position: center;
+  }
+
+  /* remove desktop-only min-heights on text panels so they flow naturally */
+  .about-text,
+  .sponsor-text {
+    min-height: auto;
+    padding-top: 1rem;
+  }
+
+  /* ensure the title is near the top and spacing is reduced */
+  .about-text h2,
+  .sponsor-text h2 {
+    margin-top: 0;
   }
 }
