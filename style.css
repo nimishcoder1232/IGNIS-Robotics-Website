@@ -360,15 +360,46 @@ section h3, main h2 {
 }
 
 .about-text h2 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-top: 0; /* Ensure the title starts at the very top */
   margin-bottom: 0.5rem;
 }
 
 .about-text p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: #cbd5f5;
+}
+
+/* Add visible space between consecutive paragraphs in about text */
+.about-text p + p {
+  margin-top: 1rem;
+}
+
+/* Links block under about text */
+.about-links {
+  margin-top: 1rem;
+}
+.about-links h3 {
+  margin: 0 0 0.5rem 0;
+  color: #e5e7eb;
+  font-size: 1.05rem;
+}
+.external-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.external-links li {
+  margin: 0.45rem 0;
+}
+.external-links a {
+  color: #fef3c7; /* soft yellow to stand out */
+  text-decoration: underline;
+  font-weight: 600;
+}
+.external-links a:hover {
+  color: #fff;
 }
 
 .sponsor-section {
