@@ -51,14 +51,14 @@ nav a {
 }
 
 .sponsor-packet-link {
-  color: #7c3aed; /* purple that's easier to read on dark backgrounds */
+  color: #ffffff; /* purple that's easier to read on dark backgrounds */
   text-decoration: underline;
   font-weight: 600;
 }
 
 .sponsor-packet-link:hover,
 .sponsor-packet-link:focus {
-  color: #9f7aea;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -441,14 +441,14 @@ section h3, main h2 {
 
 .sponsor-text h2 {
   margin-top: 0; /* title at the very top */
-  /* responsive heading size */
-  font-size: clamp(1.2rem, 1.6vw + 0.6rem, 2rem);
+  /* responsive heading size (increased) */
+  font-size: clamp(1.6rem, 2.6vw + 0.6rem, 2.6rem);
 }
 
 .sponsor-text p,
 .sponsor-text ul {
   /* responsive body size: shrinks on smaller viewports so larger blocks fit better */
-  font-size: clamp(0.95rem, 0.9vw + 0.45rem, 1.05rem);
+  font-size: clamp(1rem, 1.3vw + 0.45rem, 1.15rem);
   line-height: 1.6;
 }
 
