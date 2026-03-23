@@ -366,9 +366,9 @@ section h3, main h2 {
 }
 
 .about-text p {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: #cbd5f5;
+  font-size: 1.3rem; /* readable body size */
+  line-height: 1.6;    /* more breathing room for long paragraphs */
+  color: #e6f3ff;     /* slightly brighter for contrast on blue */
 }
 
 /* Add visible space between consecutive paragraphs in about text */
@@ -393,12 +393,15 @@ section h3, main h2 {
 .external-links li {
   margin: 0.45rem 0;
 }
-.external-links a {
-  color: #fef3c7; /* soft yellow to stand out */
+.external-links a,
+.about-text .external-links a:link,
+.about-text .external-links a:visited {
+  color: #ffffff; /* force white for legibility on blue */
   text-decoration: underline;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
 }
-.external-links a:hover {
+.about-text .external-links a:hover {
   color: #fff;
 }
 
