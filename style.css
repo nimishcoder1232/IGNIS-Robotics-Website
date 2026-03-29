@@ -406,24 +406,11 @@ section h3, main h2 {
 }
 
 .sponsor-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  display: block; /* simplified layout now the image is removed */
+  text-align: center; /* center all text inside sponsor sections */
+  margin-bottom: 2.5rem;
 }
 
-.sponsor-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  max-height: 720px;
-  min-height: 360px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
 
 .sponsor-text {
   color: #e5e7eb;
@@ -431,25 +418,44 @@ section h3, main h2 {
   background: #0f68ea;
   border-radius: 0.75rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* align title and content to the top */
-  height: auto;
-  min-height: auto;
-  padding-top: 1.25rem; /* small breathing room at top */
+  display: block;
+  padding: 1.5rem; /* breathing room */
+  max-width: none;    /* allow the box to span the full content width */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sponsor-text h2 {
   margin-top: 0; /* title at the very top */
   /* responsive heading size (increased) */
-  font-size: clamp(1.6rem, 2.6vw + 0.6rem, 2.6rem);
+  font-size: clamp(1.8rem, 3.2vw + 0.6rem, 3rem);
 }
 
 .sponsor-text p,
 .sponsor-text ul {
   /* responsive body size: shrinks on smaller viewports so larger blocks fit better */
-  font-size: clamp(1rem, 1.3vw + 0.45rem, 1.15rem);
+  font-size: clamp(1.05rem, 1.6vw + 0.45rem, 1.25rem);
   line-height: 1.6;
+}
+
+.sponsor-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0; /* separate from paragraph */
+}
+.sponsor-text ul li {
+  margin: 0.6rem 0;
+  font-size: clamp(1.05rem, 1.6vw + 0.45rem, 1.25rem);
+}
+
+/* Center the sections below the main sponsor box and reduce excessive side gaps */
+.sponsor-contact .contact-bubble,
+.sponsor-open,
+.donation-info {
+  text-align: center;
+  max-width: 980px;
+  margin: 1rem auto;
+  padding: 0 1rem; /* prevent text from touching the viewport edges on small screens */
 }
 
 /* Make list markers align with the paragraph text inside the padded .sponsor-text box */
