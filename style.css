@@ -46,6 +46,39 @@ p {
   color: var(--muted);
 }
 
+/* If text sits on a blue/gradient panel, keep it white for readability */
+.about-text,
+.highlight-card,
+.contact-bubble,
+.donation-info,
+.sponsor-open,
+.sponsor-text {
+  color: #ffffff;
+  border-radius: var(--radius);
+  overflow: hidden; /* keep gradient sheen clipped to rounded corners */
+}
+
+.about-text p,
+.highlight-card p,
+.contact-bubble p,
+.donation-info p,
+.sponsor-open p,
+.sponsor-text p,
+.donation-info li,
+.sponsor-open li,
+.sponsor-text li {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.about-text a,
+.highlight-card a,
+.contact-bubble a,
+.donation-info a,
+.sponsor-open a,
+.sponsor-text a {
+  color: #ffffff;
+}
+
 /* Links: keep readable, add a clean hover */
 a {
   color: var(--text);
@@ -617,8 +650,8 @@ section h3, main h2 {
 .sponsor-text {
   color: #e5e7eb;
   padding: 1rem;
-  background: #0f68ea;
-  border-radius: 0.75rem;
+  /* background handled by the shared premium panel gradient above */
+  border-radius: var(--radius);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   display: block;
   padding: 1.5rem; /* breathing room */
@@ -658,6 +691,7 @@ section h3, main h2 {
   max-width: 980px;
   margin: 1rem auto;
   padding: 1.25rem 1.5rem; /* inside-box breathing room so text doesn't touch edges */
+  border-radius: var(--radius);
 }
 
 /* Make list markers align with the paragraph text inside the padded .sponsor-text box */
