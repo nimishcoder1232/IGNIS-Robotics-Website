@@ -2,24 +2,188 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif;
+}
+
+:root {
+  --bg0: #071226;
+  --bg1: #091a34;
+
+  --text: #eaf2ff;
+  --muted: rgba(234, 242, 255, 0.78);
+
+  --blue: #0f68ea;
+  --blue-hi: #2f86ff;
+  --blue-lo: #0b49b7;
+  --cyan: #63d7ff;
+
+  --ring: rgba(255, 255, 255, 0.92);
+  --ring-soft: rgba(255, 255, 255, 0.55);
+
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.42);
+  --shadow-tight: 0 10px 24px rgba(0, 0, 0, 0.38);
+  --radius: 18px;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
-  /* very dark blue background to preserve the dark site look */
-  background: #020617;
-  color: #f5f5f5;
-  line-height: 1.6;
+  font-family: "Lexend", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 700px at 20% 0%, rgba(47, 134, 255, 0.25), transparent 60%),
+    radial-gradient(900px 600px at 85% 8%, rgba(99, 215, 255, 0.18), transparent 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg0));
+  color: var(--text);
+}
+
+h1, h2, h3, .page-title {
+  font-family: "Sora", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* Links: keep readable, add a clean hover */
+a {
+  color: var(--text);
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(99, 215, 255, 0.55);
+}
+
+a:hover {
+  text-decoration-color: rgba(255, 255, 255, 0.92);
+}
+
+/* 3D “blue box” system: applies broadly without changing layout/padding */
+.card,
+.panel,
+.content-box,
+.section-box,
+.hero-card,
+.sponsor-box,
+.about-box,
+.info-box,
+.primary-box,
+.feature {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.06) 18%, rgba(0, 0, 0, 0) 45%),
+    radial-gradient(900px 420px at 18% 12%, rgba(99, 215, 255, 0.20), transparent 55%),
+    linear-gradient(135deg, var(--blue-hi), var(--blue) 40%, var(--blue-lo));
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+/* Top edge sheen + subtle inner depth */
+.card::before,
+.panel::before,
+.content-box::before,
+.section-box::before,
+.hero-card::before,
+.sponsor-box::before,
+.about-box::before,
+.info-box::before,
+.primary-box::before,
+.feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 38%),
+    radial-gradient(650px 260px at 12% 8%, rgba(255, 255, 255, 0.14), transparent 52%);
+  opacity: 0.9;
+}
+
+.card::after,
+.panel::after,
+.content-box::after,
+.section-box::after,
+.hero-card::after,
+.sponsor-box::after,
+.about-box::after,
+.info-box::after,
+.primary-box::after,
+.feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20), inset 0 -18px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0.9;
+}
+
+/* Hover outline: crisp, readable, not neon */
+.card:hover,
+.panel:hover,
+.content-box:hover,
+.section-box:hover,
+.hero-card:hover,
+.sponsor-box:hover,
+.about-box:hover,
+.info-box:hover,
+.primary-box:hover,
+.feature:hover {
+  box-shadow: 0 0 0 2px var(--ring), var(--shadow);
+}
+
+.card:focus-within,
+.panel:focus-within,
+.content-box:focus-within,
+.section-box:focus-within,
+.hero-card:focus-within,
+.sponsor-box:focus-within,
+.about-box:focus-within,
+.info-box:focus-within,
+.primary-box:focus-within,
+.feature:focus-within {
+  box-shadow: 0 0 0 3px var(--ring-soft), 0 0 0 1px rgba(0, 0, 0, 0.25), var(--shadow);
+}
+
+/* Buttons / nav links (if present) */
+.btn,
+button,
+input[type="submit"],
+.nav a {
+  font-family: inherit;
+}
+
+/* Keep headings readable (no gradient text), but add a tiny accent rule if used */
+.accent-underline {
+  position: relative;
+}
+
+.accent-underline::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 64px;
+  border-radius: 999px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, rgba(99, 215, 255, 0.95), rgba(47, 134, 255, 0.25));
+}
+
+/* keyboard accessibility */
+*:focus-visible {
+  outline: 3px solid rgba(147, 197, 253, 0.55);
+  outline-offset: 3px;
 }
 
 .site-header {
-  background: #0f68ea;
+  background: linear-gradient(90deg, rgba(15, 104, 234, 0.98), rgba(59, 130, 246, 0.9));
   padding: 1.25rem 2rem; /* increased header padding for more space */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .logo-lockup {
@@ -48,6 +212,9 @@ nav a {
   margin-left: 1.25rem; /* more spacing between nav items */
   text-decoration: none;
   font-weight: 500;
+  padding: 0.35rem 0.55rem;
+  border-radius: 10px;
+  transition: background-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
 }
 
 .sponsor-packet-link {
@@ -91,22 +258,55 @@ nav a {
 }
 
 nav a:hover {
-  color: #fffbeb;
+  color: #ffffff;
+  background: rgba(255,255,255,0.12);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
 }
 
 main {
+  /* don't add huge side margins; keep it similar to what you had */
   padding: 1.5rem;
   margin: 0;
   min-height: 100vh; /* Ensure it fills the full viewport height */
 }
 
 .hero {
-  background: #0f68ea;
+  background:
+    radial-gradient(900px 520px at 0% 0%, rgba(34, 211, 238, 0.22), transparent 65%),
+    linear-gradient(135deg, rgba(15, 104, 234, 0.98), rgba(59, 130, 246, 0.86));
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   margin-bottom: 10.5rem; /* increased gap below hero (3x) */
   box-shadow: 0 25px 50px rgba(15, 23, 42, 0.9);
   min-height: 560px; /* give the hero a solid presence so the image displays prominently */
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+/* Make "blue boxes" feel more premium without changing layout */
+.about-text,
+.highlight-card,
+.contact-bubble,
+.donation-info,
+.sponsor-open,
+.sponsor-text {
+  background:
+    radial-gradient(700px 420px at 0% 0%, rgba(34, 211, 238, 0.16), transparent 62%),
+    linear-gradient(135deg, rgba(15, 104, 234, 0.92), rgba(37, 99, 235, 0.84));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: var(--shadow-soft);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+/* Crisp white outline on hover (your request) */
+.about-text:hover,
+.highlight-card:hover,
+.contact-bubble:hover,
+.donation-info:hover,
+.sponsor-open:hover,
+.sponsor-text:hover {
+  border-color: var(--ring);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 
 .hero-split {
@@ -137,7 +337,9 @@ main {
   width: 100%;
   height: 100%;
   max-width: none;
-  background: #0f68ea;
+  background:
+    radial-gradient(700px 420px at 0% 0%, rgba(34, 211, 238, 0.14), transparent 62%),
+    linear-gradient(135deg, rgba(15, 104, 234, 0.90), rgba(37, 99, 235, 0.82));
   border-radius: 0.9rem;
   overflow: hidden; /* ensure the image can crop to shape */
   display: flex;
@@ -254,7 +456,7 @@ main {
 }
 
 .highlight-card {
-  background: #0f68ea;
+  /* background handled by the shared premium panel gradient above */
   border-radius: 0.9rem;
   padding: 1.25rem 1.3rem;
   border: 1px solid rgba(148, 163, 184, 0.35);
@@ -348,7 +550,7 @@ section h3, main h2 {
 .about-text {
   color: #e5e7eb;
   padding: 1rem;
-  background: #0f68ea;
+  /* background handled by the shared premium panel gradient above */
   border-radius: 0.75rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   height: auto;
