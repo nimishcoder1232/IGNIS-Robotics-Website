@@ -745,6 +745,21 @@ section h3, main h2 {
   font-size: 1rem;
 }
 
+/* Contact page: add clear separation between the sign-up link block and socials */
+.contact-info .form-note + .social-buttons {
+  margin-top: 1.4rem;
+}
+
+/* If the sign-up section uses a heading right before the link note, give it breathing room */
+.contact-info h3 + .form-note {
+  margin-top: 0.35rem;
+}
+
+/* Push socials lower (a bit) without affecting other pages */
+.contact-info .social-buttons {
+  margin-top: 1.4rem;
+}
+
 @media (max-width: 768px) {
   .contact-section {
     grid-template-columns: 1fr;
