@@ -29,3 +29,9 @@ nav a{padding:.75rem .9rem}
 
 :root{--blue:#22d3ee;--cyan:#22d3ee;--amber:#22d3ee}
 .nav-cta{background:rgba(34,211,238,.12)}
+
+.hero-frame img{
+  object-position:left top;
+  transform:translate(-100px,-58px) scale(1.14);
+  transform-origin:top left;
+}
