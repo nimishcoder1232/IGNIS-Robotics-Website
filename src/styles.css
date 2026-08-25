@@ -32,6 +32,6 @@ nav a{padding:.75rem .9rem}
 
 .hero-frame img{
   object-position:left top;
-  transform:translate(-100px,-58px) scale(1.14);
+  transform:translate(clamp(-80px,-5vw,-20px),clamp(-48px,-3vw,-14px)) scale(clamp(1.04,calc(1 + 2vw),1.14));
   transform-origin:top left;
 }
