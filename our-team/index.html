@@ -12,96 +12,6 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" href="../images/Team TAB Logo.png" type="image/png">
 
-  <style>
-    /* Page-scoped styles for Our Team layout */
-    .team-page {
-      padding: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto 3rem;
-    }
-
-    .team-hero {
-      text-align: center;
-      margin-bottom: 1.25rem;
-    }
-
-    .team-hero .page-title {
-      font-size: 2.6rem;
-      margin: 0 0 0.5rem 0;
-    }
-
-    .leadership-list {
-      display: grid;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .leader-row {
-      display: grid;
-      grid-template-columns: 480px 1fr; /* landscape image left, content right */
-      gap: 1.25rem;
-      align-items: start;
-    }
-
-    .leader-photo {
-      width: 480px; /* landscape preview sized to fit the content area */
-      aspect-ratio: 4 / 3; /* 1440:1080 landscape ratio */
-      overflow: hidden;
-      border-radius: 0.8rem;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
-      border: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .leader-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .leader-info h3 {
-      margin: 0 0 0.35rem 0;
-      font-size: 1.35rem;
-    }
-
-    .leader-info h4 {
-      margin: 0 0 0.6rem 0;
-      font-size: 1rem;
-      color: #bfdbfe;
-      font-weight: 600;
-    }
-
-    .leader-info p {
-      margin: 0 0 0.65rem 0;
-      color: #ffffff; /* make member descriptions white for contrast */
-      font-size: 1.05rem;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .leader-contact {
-      font-weight: 700;
-      color: #fca311;
-      margin-top: 0.25rem;
-    }
-
-    .members-directory {
-      margin-top: 1.5rem;
-    }
-
-    @media (max-width: 880px) {
-      .leader-row {
-        grid-template-columns: 1fr; /* stack on small screens */
-      }
-      .leader-photo {
-        width: 100%;
-        aspect-ratio: 16/9;
-      }
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
@@ -109,7 +19,8 @@
   <img class="site-logo" src="../images/Team logo.png" alt="IGNIS Robotics logo">
       <h1>IGNIS Robotics FRC Team 12034</h1>
     </div>
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" aria-label="Main navigation">
       <a href="../home/">Home</a>
       <a href="../about/">About</a>
       <a href="../sponsors/">Sponsors</a>
@@ -124,7 +35,7 @@
     </section>
 
     <section class="leadership-list">
-      <div class="leader-row">
+      <div class="leader-row" data-reveal>
         <div class="leader-photo">
           <img src="../images/leadership/nimish.jpeg" alt="Photo: Nimish Nijhawan">
         </div>
@@ -136,7 +47,7 @@
         </div>
       </div>
 
-      <div class="leader-row">
+      <div class="leader-row" data-reveal>
         <div class="leader-photo">
           <img src="../images/leadership/AayanBera.jpeg" alt="Photo: Aayan Bera">
         </div>
@@ -148,7 +59,7 @@
         </div>
       </div>
 
-      <div class="leader-row">
+      <div class="leader-row" data-reveal>
         <div class="leader-photo">
           <img src="../images/leadership/Evan.png" alt="Photo: Evan Soh">
         </div>
@@ -160,7 +71,7 @@
         </div>
       </div>
 
-      <div class="leader-row">
+      <div class="leader-row" data-reveal>
         <div class="leader-photo">
           <img src="../images/leadership/Tijan.png" alt="Photo: Tijan Noah White">
         </div>
@@ -174,7 +85,7 @@
     </section>
 
     <section class="leadership-list">
-      <div class="leader-row">
+      <div class="leader-row" data-reveal>
         <div class="leader-photo">
           <img src="../images/leadership/Pranav.png" alt="Photo: Pranav Thirumala">
         </div>
@@ -186,7 +97,7 @@
         </div>
       </div>
 
-      <div class="leader-row">
+      <div class="leader-row" data-reveal>
         <div class="leader-photo">
           <img src="../images/leadership/Ahsan.png" alt="Photo: Ahsan Ahmed">
         </div>

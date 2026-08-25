@@ -16,7 +16,8 @@
   <img class="site-logo" src="../images/Team logo.png" alt="IGNIS Robotics logo">
       <h1>IGNIS Robotics FRC Team 12034</h1>
     </div>
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav id="site-nav" aria-label="Main navigation">
       <a href="../home/">Home</a>
       <a href="../about/">About</a>
       <a href="../sponsors/">Sponsors</a>
@@ -26,7 +27,7 @@
   </header>
 
   <main>
-    <section class="hero hero-split">
+    <section class="hero hero-split" data-reveal>
       <div class="hero-visual">
         <div class="hero-image" aria-label="Team photo">
           <img
@@ -58,7 +59,7 @@
       </div>
     </section>
 
-    <section class="highlight-grid">
+    <section class="highlight-grid" data-reveal>
       <article class="highlight-card">
         <h3>Student Led</h3>
         <p>Our team is entirely student-led, with members taking on key roles in all aspects of our projects.
