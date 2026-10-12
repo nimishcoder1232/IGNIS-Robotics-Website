@@ -167,6 +167,31 @@ main { width: min(var(--content), calc(100% - 3rem)); margin: 0 auto; padding: c
 .contact-bubble p, .donation-info p, .sponsor-open p { max-width: 760px; margin: 0 auto 1rem; }
 .contact-bubble p:last-child { margin-bottom: 0; }
 
+.sponsor-tiers { margin: 1rem 0 4rem; text-align: center; }
+.sponsor-tiers h2 { margin-bottom: 2rem; }
+.tier-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.tier-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: 260px;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(19,36,58,.96), rgba(10,22,37,.92));
+  text-align: center;
+}
+.tier-featured { border-color: rgba(255,180,91,.45); }
+.tier-label { color: var(--cyan); font: 500 .72rem 'DM Mono', monospace; letter-spacing: .16em; text-transform: uppercase; }
+.tier-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; width: 100%; padding: 1.25rem; }
+.tier-logos img { display: block; height: 48px; width: auto; object-fit: contain; }
+.tier-featured .tier-logos img { height: 64px; }
+.tier-open { border-style: dashed; background: rgba(13,25,41,.4); }
+.tier-open .tier-label { color: var(--dim); }
+.tier-sought { color: var(--dim); font: 500 .78rem 'DM Mono', monospace; letter-spacing: .14em; text-transform: uppercase; }
+
 .contact-section { display: grid; grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 7vw, 7rem); align-items: center; min-height: 620px; }
 .contact-image { padding: clamp(1.5rem, 5vw, 4rem); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(19,36,58,.8), rgba(7,16,29,.8)); }
 .contact-image img { display: block; width: 100%; filter: drop-shadow(0 25px 30px rgba(0,0,0,.35)); }
@@ -215,6 +240,8 @@ main { width: min(var(--content), calc(100% - 3rem)); margin: 0 auto; padding: c
   .hero-content { order: 1; }
   .hero-image, .hero-photo { min-height: 330px; }
   .highlight-grid, .sponsor-text ul { grid-template-columns: 1fr; }
+  .tier-grid { grid-template-columns: repeat(2, 1fr); }
+  .tier-card { min-height: 220px; padding: 2rem 1.25rem; }
   .about-section, .about-section:nth-child(even) { grid-template-columns: 1fr; }
   .about-section:nth-child(even) .about-image { order: initial; }
   .about-image { min-height: 300px; }
@@ -226,4 +253,5 @@ main { width: min(var(--content), calc(100% - 3rem)); margin: 0 auto; padding: c
   .site-logo { width: 36px; height: 36px; }
   .hero-content h2 { font-size: 2.5rem; }
   .social-buttons { flex-wrap: wrap; }
+  .tier-grid { grid-template-columns: 1fr; }
 }
